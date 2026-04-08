@@ -41,7 +41,7 @@ modelo = cargar_modelo()
 
 
 # ─── Interfaz ───────────────────────────────────────────────────────────────────
-st.title("🏦 Predicción de Depósito Bancario")
+st.title("Predicción de la Práctica 1 - Depósito Bancario")
 st.markdown(
     "Introduce los datos del cliente para predecir si suscribirá un depósito a plazo."
 )
@@ -85,7 +85,7 @@ with col3:
 
 
 # ─── Predicción ─────────────────────────────────────────────────────────────────
-if st.button("🔮 Predecir", use_container_width=True):
+if st.button("PREDECIR", use_container_width=True):
 
     datos_cliente = pd.DataFrame([{
         'age':       age,
@@ -112,9 +112,9 @@ if st.button("🔮 Predecir", use_container_width=True):
     st.header("Resultado")
 
     if prediccion == 1:
-        st.success(f"✅ **SÍ suscribirá el depósito** (probabilidad: {probabilidad:.1%})")
+        st.success(f"**SÍ suscribirá el depósito** (probabilidad: {probabilidad:.1%})")
     else:
-        st.error(f"❌ **NO suscribirá el depósito** (probabilidad de sí: {probabilidad:.1%})")
+        st.error(f"**NO suscribirá el depósito** (probabilidad de sí: {probabilidad:.1%})")
 
     st.progress(float(probabilidad))
     st.caption(f"Probabilidad estimada de contratación: {probabilidad:.4f}")
